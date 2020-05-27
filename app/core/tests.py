@@ -18,7 +18,7 @@ def create_post():
         title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
         "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         link="https://www.lipsum.com/",
-        author_name=sample_user(),
+        author=sample_user(),
     )
 
 
@@ -55,7 +55,7 @@ class ModelTests(TestCase):
             title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
             "sed do eiusmod tempor incididunt ut labore dolore magna aliqua.",
             link="https://www.lipsum.com/",
-            author_name=sample_user(),
+            author=sample_user(),
         )
 
         self.assertEqual(str(post), post.title)
@@ -64,7 +64,7 @@ class ModelTests(TestCase):
         """Test the comment string representation"""
         post = create_post()
         comment = models.Comment.objects.create(
-            author_name=post.author_name,
+            author=post.author,
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
             "sed do eiusmod tempor incididunt ut labore dolore magna aliqua.",
             post=post,

@@ -4,22 +4,22 @@ from core.models import Post, Comment
 
 
 class CommentSerializer(serializers.ModelSerializer):
-    """Serializer for comment objects"""
 
-    author_name = serializers.ReadOnlyField(source="author_name.username")
+    author = serializers.ReadOnlyField(source="author.username")
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     class Meta:
         model = Comment
-        fields = ("id", "post", "author_name", "content", "creation_date")
+        fields = ("id", "post", "author", "content", "creation_date")
         read_only_fields = ("id",)
 
 
 class PostSerializer(serializers.ModelSerializer):
-    """Serializer for post objects"""
 
     comments = CommentSerializer(many=True, read_only=True)
     total_comments = serializers.SerializerMethodField(read_only=True)
-    author_name = serializers.ReadOnlyField(source="author_name.username")
+    total_upvotes = serializers.SerializerMethodField(read_only=True)
+    author = serializers.ReadOnlyField(source="author.username")
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     class Meta:
@@ -29,12 +29,16 @@ class PostSerializer(serializers.ModelSerializer):
             "title",
             "link",
             "creation_date",
+            "total_upvotes",
             "upvotes",
-            "author_name",
+            "author",
             "total_comments",
             "comments",
         )
-        read_only_fields = ("id",)
+        read_only_fields = ("id", "upvotes",)
 
     def get_total_comments(self, obj):
         return obj.comments.count()
+
+    def get_total_upvotes(self, obj):
+        return obj.upvotes.count()
