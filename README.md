@@ -23,6 +23,8 @@ or via ssh `git clone git@github.com:tuipik/develops_today.git`
 ---
 **Endpoints:**
 
+create user: `http://0.0.0.0:8000/api/v1/createuser/`
+
 posts list: `http://0.0.0.0:8000/api/v1/post/`
 
 post detail: `http://0.0.0.0:8000/api/v1/post/1`
@@ -34,4 +36,6 @@ comments list: `http://0.0.0.0:8000/api/v1/comment/`
 comment detail: `http://0.0.0.0:8000/api/v1/comment/1`
 
 ---
-Postman Collection is in dir with source code `developers_today_local.postman_collection.json`
+Postman Collections 
+ 
+local: `https://www.getpostman.com/collections/93e19b4679a8b256229d`
