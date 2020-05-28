@@ -1,2 +1,37 @@
 # develops_today
-A simple news board API.
+***A simple news board API.***
+
+---
+**Usage**
+
+- Install docker and git on your machine
+
+- Clone this repository via http `git clone https://github.com/tuipik/develops_today.git`
+or via ssh `git clone git@github.com:tuipik/develops_today.git`
+
+- In terminal open directory with source code of repo
+
+- Build or pull docker image. In terminal: `make build` or `make pull`
+
+- Start local server by `make run` command in Terminal
+
+- Fill up database with testing data and superuser `make db`
+
+    to login with superuser use login: `test_user`  password: `test_pass`
+ 
+- To start tests use command `make test`
+---
+**Endpoints:**
+
+posts list: `http://0.0.0.0:8000/api/v1/post/`
+
+post detail: `http://0.0.0.0:8000/api/v1/post/1`
+
+post upvote: `http://0.0.0.0:8000/api/v1/post/1/upvote`
+
+comments list: `http://0.0.0.0:8000/api/v1/comment/`
+
+comment detail: `http://0.0.0.0:8000/api/v1/comment/1`
+
+---
+Postman Collection is in dir with source code `developers_today_local.postman_collection.json`
