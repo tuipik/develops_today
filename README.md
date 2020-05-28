@@ -23,6 +23,19 @@ or via ssh `git clone git@github.com:tuipik/develops_today.git`
 ---
 **Endpoints:**
 
+deployed
+
+create user: `http://18.191.196.119:8000/api/v1/createuser/`
+
+post: `http://18.191.196.119:8000/api/v1/post/`
+
+comment: `http://18.191.196.119:8000/api/v1/comment/`
+
+upvote: `http://18.191.196.119:8000/api/v1/post/1/upvote` 
+  
+==
+local
+
 create user: `http://0.0.0.0:8000/api/v1/createuser/`
 
 posts list: `http://0.0.0.0:8000/api/v1/post/`
@@ -36,6 +49,8 @@ comments list: `http://0.0.0.0:8000/api/v1/comment/`
 comment detail: `http://0.0.0.0:8000/api/v1/comment/1`
 
 ---
-Postman Collections 
+**Postman Collections** 
  
 local: `https://www.getpostman.com/collections/93e19b4679a8b256229d`
+
+deploy: `https://www.getpostman.com/collections/8915400b44f20e7cd6b5`
