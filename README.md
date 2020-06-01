@@ -48,9 +48,3 @@ comments list: `http://0.0.0.0:8000/api/v1/comment/`
 
 comment detail: `http://0.0.0.0:8000/api/v1/comment/1`
 
----
-**Postman Collections** 
- 
-local: `https://www.getpostman.com/collections/93e19b4679a8b256229d`
-
-deploy: `https://www.getpostman.com/collections/8915400b44f20e7cd6b5`
